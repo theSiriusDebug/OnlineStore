@@ -11,11 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
-public class ControllerForProducts {
+public class ProductController {
     private ServiceForProducts service;
-    private static final Logger logger = Logger.getLogger(ControllerForProducts.class);
+    private static final Logger logger = Logger.getLogger(ProductController.class);
     @Autowired
-    public ControllerForProducts(ServiceForProducts service) {
+    public ProductController(ServiceForProducts service) {
         this.service = service;
     }
 

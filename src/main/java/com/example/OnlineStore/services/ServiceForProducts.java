@@ -1,12 +1,10 @@
 package com.example.OnlineStore.services;
 
 import com.example.OnlineStore.models.Product;
-import com.example.OnlineStore.models.PurchaseRequest;
 import com.example.OnlineStore.repositoriesForClasses.ProductRepository;
 import jakarta.transaction.Transactional;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,11 +12,13 @@ import java.util.List;
 @Service
 public class ServiceForProducts {
     private ProductRepository jpaRepository;
+    private List<Product>list;
     private static final Logger logger = Logger.getLogger(ServiceForProducts.class);
 
     @Autowired
-    public ServiceForProducts(ProductRepository jpaRepository) {
+    public ServiceForProducts(ProductRepository jpaRepository, List<Product> list) {
         this.jpaRepository = jpaRepository;
+        this.list = list;
     }
 
     public List<Product>getAllProducts(){
@@ -46,5 +46,4 @@ public class ServiceForProducts {
         jpaRepository.save(product);
         return true;
     }
-
 }
