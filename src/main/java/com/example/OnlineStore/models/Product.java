@@ -15,4 +15,5 @@ public class Product {
     private String description;
     private int rate;
     private int quantity;
+//    private Review review;
 }

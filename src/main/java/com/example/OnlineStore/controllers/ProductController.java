@@ -1,7 +1,7 @@
 package com.example.OnlineStore.controllers;
 
 import com.example.OnlineStore.models.Product;
-import com.example.OnlineStore.services.ServiceForProducts;
+import com.example.OnlineStore.services.ProductService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +12,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/products")
 public class ProductController {
-    private ServiceForProducts service;
+    private ProductService service;
     private static final Logger logger = Logger.getLogger(ProductController.class);
     @Autowired
-    public ProductController(ServiceForProducts service) {
+    public ProductController(ProductService service) {
         this.service = service;
     }
 

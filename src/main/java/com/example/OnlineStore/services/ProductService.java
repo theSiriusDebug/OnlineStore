@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ServiceForProducts {
+public class ProductService {
     private ProductRepository jpaRepository;
     private List<Product>list;
-    private static final Logger logger = Logger.getLogger(ServiceForProducts.class);
+    private static final Logger logger = Logger.getLogger(ProductService.class);
 
     @Autowired
-    public ServiceForProducts(ProductRepository jpaRepository, List<Product> list) {
+    public ProductService(ProductRepository jpaRepository, List<Product> list) {
         this.jpaRepository = jpaRepository;
         this.list = list;
     }
@@ -46,4 +46,5 @@ public class ServiceForProducts {
         jpaRepository.save(product);
         return true;
     }
+
 }
